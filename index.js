@@ -12,5 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return getEachWord(tutorials);
 }
+
+function getEachWord(tutorialList){
+  console.log(tutorialList);
+  const wordArr = tutorialList.map(tutorial => {
+   const words = tutorial.split(" ")
+   const capWords = words.map(word => {
+     return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+  return capWords.join(" ")
+  })
+  return wordArr;
+}
+
